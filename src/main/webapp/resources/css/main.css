@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+h1 a {
+	text-decoration: none;
+	color: black;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+li {
+	display: inline-block;
+	padding: 20px 0px;
+	width: 13%;
+	text-align: center;
+	margin: 0;
+	
+}
+
+ul a {
+	text-decoration: none;
+	color: black;
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+ul a:hover {
+	color: pink;
+	
+}
+
+label{
+	width: 150px;
+	display: inline-block;
+	margin: 10px 0px;
+}
+
+input{
+	padding: 5px 0;
+}
+
+img{
+	width: 50px;
+	height: 50px;
+}

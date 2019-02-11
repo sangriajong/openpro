@@ -12,7 +12,7 @@
 		width: 100%;
 		height: 100vh;
 		background-color: #f1d0d5;
-		color: white;
+		color: black;
 		opacity: 0.9;
 		z-index: 10;
 		top: 0;
@@ -29,6 +29,16 @@
 		text-align: center;
 		margin: auto;
 		cursor: pointer;
+	}
+	
+#Modified{
+	text-decoration: none;
+	color: black;
+	font-size: 50pt;
+	}
+	
+	.right{
+	margin-left:300px;
 	}
 
 </style>
@@ -60,6 +70,7 @@
 		<div id="mod">
 			<form action="/editMember.do" method="POST" enctype="multipart/form-data">
 				
+				<div class ="right" onclick="x()"><a href="#"  id ="Modified" data-role="button">X</a></div>
 				<input type="hidden" id="idx" name="idx"/><br>
 				<label for="id">아이디(이메일)</label>
 				<input type="text" name="id" id="id" /><br>
@@ -70,7 +81,7 @@
 				<input type="submit" value="변경" />
 				
 			</form>
-			<div onclick="x()">닫기</div>
+			
 		</div>
 	</section>
 	<script>
@@ -85,7 +96,7 @@
 				var member = {idx:$('#idx').val(), id:$('#id').val(), password:$('#password').val(), name:$('#name').val()};
 				memberService.update(member, function(result){
 					alert(result);
-					$('#mod').fadeOut(1000);
+					//$('#mod').fadeOut(1000);
 					makeList();
 				});
 			});

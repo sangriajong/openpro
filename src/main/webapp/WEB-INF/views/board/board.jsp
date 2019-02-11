@@ -27,6 +27,7 @@
 			</tr>
 		</c:forEach>
 		</table>
+		
 		<!--  페이징 처리  -->
 		<div class="paging">
 			<c:if test="${page.prev }">

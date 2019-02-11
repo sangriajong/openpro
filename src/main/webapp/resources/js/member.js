@@ -1,7 +1,7 @@
 console.log("Member module..........")
 
 var memberService = (function(){
-
+//json 받아오기 
 	function getList(callback, error){
 		
 		$.getJSON('/open/member/list.json', function(data){
@@ -14,7 +14,7 @@ var memberService = (function(){
 			}
 		});
 	}
-	
+	// 삭제 
 	function remove(idx, callback, error){
 		$.ajax({
 			type : 'delete',
@@ -31,7 +31,7 @@ var memberService = (function(){
 			}
 		});
 	}
-	
+	//업뎃
 	function update(member, callback, error){
 		$.ajax({
 			type : 'put',
@@ -50,7 +50,7 @@ var memberService = (function(){
 			}
 		});
 	}
-
+//종료
 	return {
 		getList : getList,
 		remove : remove,

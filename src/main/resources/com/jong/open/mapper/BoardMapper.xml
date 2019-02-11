@@ -2,19 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jong.open.mapper.BoardMapper">
-
-	<insert id="insertContent" parameterType="com.jong.open.board.Board">
-		insert into board(bname, bpassword, bcontent) values(#{bname}, #{bpassword}, #{bcontent})
-	</insert>
-	
+	<!-- 방명록 읽기 -->
 	<select id="readContent" resultType="com.jong.open.board.Board">
 		select * from board where no=#{no}
 	</select>
-	
+          <!-- 방명록에 값 넣기  -->
+	<insert id="insertContent" parameterType="com.jong.open.board.Board">
+		insert into board(bname, bpassword, bcontent) values(#{bname}, #{bpassword}, #{bcontent})
+	</insert>
+	<!-- 멤버 가져와서 정렬 때리기 -->
 	<select id="getList" resultType="com.jong.open.board.Board">
 		select * from board order by no desc
 	</select>
-	
+	<!-- 페이징 -->
 	<select id="getListWithPaging" resultType="com.jong.open.board.Board">
 		select * from board order by no desc limit #{startNum}, #{amount}
 	</select>
@@ -22,11 +22,11 @@
 	<select id="countList" resultType="Integer">
 		select count(*) from board
 	</select>
-	
+	<!--삭제 -->
 	<delete id="delete">
 		delete from board where no = #{no}
 	</delete>
-	
+	<!-- 비번 -->
 	<select id="getPW" resultType="string">
 		select bpassword from board where no = #{no};
 	</select>

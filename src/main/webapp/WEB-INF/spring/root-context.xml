@@ -36,10 +36,10 @@
 		class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
-
+<!--마바티스 연결   -->
 	<mybatis-spring:scan
 		base-package="com.jong.open.mapper" />
-
+<!-- 기본 빈 + 추가  -->
 	<context:component-scan
 		base-package="com.jong.open" />
 	<context:component-scan

@@ -6,6 +6,7 @@ import com.jong.open.board.Board;
 import com.jong.open.board.Criteria;
 
 public interface BoardService {
+	
 	public boolean insertContent(Board board);
 
 	public Board readContent(int no);

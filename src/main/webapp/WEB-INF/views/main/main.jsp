@@ -28,7 +28,7 @@
 			<li><a
 				href="${pageContext.request.contextPath }/member/memberList">회원리스트(회원)</a></li>
 			
-			<li><a href="${pageContext.request.contextPath }/">방명록</a></li>
+			<li><a href="${pageContext.request.contextPath }/board/board">방명록</a></li>
 		</ul>
 	</nav>
 </body>

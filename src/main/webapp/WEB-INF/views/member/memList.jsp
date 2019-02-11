@@ -11,7 +11,7 @@
 		position: fixed;
 		width: 100%;
 		height: 100vh;
-		background-color: green;
+		background-color: #f1d0d5;
 		color: white;
 		opacity: 0.9;
 		z-index: 10;

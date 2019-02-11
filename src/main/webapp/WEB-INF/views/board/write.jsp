@@ -13,11 +13,11 @@
 	</header>
 	<form action="/open/board/write" method="post">
 		<label for="bname">이름</label>
-		<input type="text" name="bname" /><br>
+		<input type="text" name="bname" placeholder="이름 적어라"/><br>
 		<label for="bpassword">암호</label>
-		<input type="password" name="bpassword" /><br>
+		<input type="password" name="bpassword" placeholder="암호는 간단하게 .. 헷갈린다 ㅜㅜ" /><br>
 		<label for="bcontent">내용</label>
-		<textarea name="bcontent" cols="30" rows="10"></textarea><br>
+		<textarea name="bcontent" cols="30" rows="10" placeholder="적고싶은 내용들을 적어주세요"></textarea><br>
 		<input type="submit" value="메시지 남기기" />
 	</form>
 	<c:if test="${msg != null}">

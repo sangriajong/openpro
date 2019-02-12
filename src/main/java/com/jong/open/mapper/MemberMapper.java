@@ -18,5 +18,7 @@ public List<Member> getList(); // 멤버 list
 public int delete(int idx); // 삭제 
 
 public int update(Member member); // 업뎃 
+
+public int statusOK(String authKey, String id);  // 암호화를 통한 인증 상태 체크 
 }
 

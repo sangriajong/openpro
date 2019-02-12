@@ -37,7 +37,7 @@
 	<beans:bean class="org.springframework.web.servlet.view.BeanNameViewResolver"
 		p:order="1" />
 		
-	<!--  메일보내기  -->
+	<!--  메일보내기 send  -->
 	<beans:bean id="mailSender"
   class="org.springframework.mail.javamail.JavaMailSenderImpl">
   <beans:property name="host" value="smtp.gmail.com" />
@@ -46,7 +46,7 @@
   <beans:property name="password" value="4261530a" />
   <beans:property name="defaultEncoding" value="utf-8" />
   <beans:property name="javaMailProperties">
-  <!-- gmail일 경우 쓰는거  -->
+  <!-- eamil 요청시는 smtp  -->
    <beans:props>
     <beans:prop key="mail.transport.protocol">smtp</beans:prop>
     <beans:prop key="mail.smtp.auth">true</beans:prop>
@@ -56,6 +56,7 @@
   </beans:property>
  </beans:bean>
 	
+<context:component-scan base-package="com.jong.open.member.mail" />
 
 	
 	

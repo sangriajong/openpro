@@ -9,7 +9,7 @@ import lombok.Data;
 @Component
 @Data
 public class PageRanks {
-	
+	//페이징 처리 DTO
 	private int rank;
 	private String page;
 

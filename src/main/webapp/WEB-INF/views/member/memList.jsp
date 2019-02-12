@@ -50,6 +50,8 @@
 		<jsp:include page="/WEB-INF/views/main/main.jsp" />
 	</header>
 	<section>
+	<a href="pdf">PDF 다운로드</a>
+
 	<h2>회원 리스트</h2>
 		<table>
 		<thead>

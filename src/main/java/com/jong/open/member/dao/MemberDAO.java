@@ -47,5 +47,10 @@ public class MemberDAO {
 		
 		return list;
 	}
+
+	public static void create(Member member) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

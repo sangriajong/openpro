@@ -28,19 +28,22 @@ public class HomeController {
 		return "home";
 	}
 
+	//로그인 Get 방식으로 보내놓고  
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
 		return "login/login";
 	}
-
+	
+	// post 방식으루 처리 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(Model model, @RequestParam("id") String id, @RequestParam("password") String password,
 			HttpSession session) {
 		String view = "";
-
+		
+		//로긴 서비스 
 		boolean result = service.login(id, password);
 		view = result ? "login/loginOK" : "login/login";
-
+		
 		if (!result)
 			model.addAttribute("msg", "로그인 실패");
 		else {
@@ -69,9 +72,9 @@ public class HomeController {
 	public String signup(Model model, MultipartFile[] photo, @RequestParam("id") String id,
 			@RequestParam("password") String password, @RequestParam("name") String name, HttpServletRequest request) {
 		String view = "";
-		String uploadFolder = "/resources/upload";
+		String uploadFolder = "/resources/upload"; // 업로드 폴더 
 		String dir = request.getSession().getServletContext().getRealPath(uploadFolder);
-
+		 
 		Member member = new Member();
 		member.setId(id);
 		member.setPassword(password);
@@ -80,7 +83,7 @@ public class HomeController {
 
 		boolean result = service.signup(member);
 		view = result ? "signup/signupOK" : "signup/signup";
-
+						// 가입 성공 			가입 실패 
 		if (!result)
 			model.addAttribute("msg", "회원가입 실패");
 		else {

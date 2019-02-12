@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.jong.open.mapper.MemberMapper;
 import com.jong.open.member.Member;
+import com.jong.open.member.dao.MemberDAO;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -73,4 +76,27 @@ public class MemberServiceImpl implements MemberService {
 		return rowCnt == 1 ? true : false;
 	}
 
+	@Autowired
+	private JavaMailSender mailSender;	
+	@Override
+	@Transactional
+	public void create(Member member) throws Exception {
+		MemberDAO.create(member);
+		
+		// 임의의 authkey 생성
+		String authkey = new TempKey().getKey(50, false);
+
+	
+		member.setAuthkey(authkey);
+		MemberDAO.updateAuthkey(member);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

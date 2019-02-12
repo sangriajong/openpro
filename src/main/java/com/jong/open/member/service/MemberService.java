@@ -17,4 +17,6 @@ public interface MemberService {
 	public boolean delete(int idx);
 
 	public boolean modify(Member member);
+
+	void create(Member member) throws Exception;
 }

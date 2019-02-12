@@ -203,6 +203,30 @@
 			<version>2.8.2</version>
 		</dependency>
 
+	<!-- 이메일 발송 셋팅 -->
+		<!-- spring-context-support -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<!-- javax.mail/mail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+
+
+
+
+
+
+
+
+
 	</dependencies>
 	<build>
 		<plugins>

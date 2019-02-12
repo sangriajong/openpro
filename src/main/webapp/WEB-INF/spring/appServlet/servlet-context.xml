@@ -36,13 +36,27 @@
 	<!-- 커스텀 뷰 처리를 위한 Resolver 등록 -->
 	<beans:bean class="org.springframework.web.servlet.view.BeanNameViewResolver"
 		p:order="1" />
+		
+	<!--  메일보내기  -->
+	<beans:bean id="mailSender"
+  class="org.springframework.mail.javamail.JavaMailSenderImpl">
+  <beans:property name="host" value="smtp.gmail.com" />
+  <beans:property name="port" value="587" /><!-- 465 or 25-->
+  <beans:property name="username" value="kjh4015@gmail.com" />
+  <beans:property name="password" value="4261530a" />
+  <beans:property name="defaultEncoding" value="utf-8" />
+  <beans:property name="javaMailProperties">
+  <!-- gmail일 경우 쓰는거  -->
+   <beans:props>
+    <beans:prop key="mail.transport.protocol">smtp</beans:prop>
+    <beans:prop key="mail.smtp.auth">true</beans:prop>
+    <beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+    <beans:prop key="mail.debug">true</beans:prop>
+   </beans:props>
+  </beans:property>
+ </beans:bean>
 	
-	
-	
-<!-- 		다운로드 커스텀 뷰 등록
-	<beans:bean id="download"
-		class="com.jong.open.customview.MemberViewXls" />
-	 -->
+
 	
 	
 	

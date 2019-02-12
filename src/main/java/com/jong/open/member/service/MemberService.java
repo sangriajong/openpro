@@ -18,5 +18,5 @@ public interface MemberService {
 
 	public boolean modify(Member member);
 
-	void create(Member member) throws Exception;
+
 }

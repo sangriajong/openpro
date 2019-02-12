@@ -48,7 +48,9 @@ public class MemberDAO {
 		return list;
 	}
 
-	public static void create(Member member) {
+		
+
+	public static void updateAuthkey(Member member) {
 		// TODO Auto-generated method stub
 		
 	}

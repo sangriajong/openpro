@@ -16,5 +16,6 @@ public class Member {
 	private String name; // 이름
 	private String photo; // 사진
 	private Date regDate; // 등록일
+	private String Authkey;
 
 }

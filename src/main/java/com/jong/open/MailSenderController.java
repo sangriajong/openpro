@@ -11,21 +11,20 @@ import com.jong.open.member.Member;
 
 @Controller
 public class MailSenderController {
-	@Inject
+	@Inject // 주입
 	private MailSendService mailService;
 
+	// 매핑
 	@RequestMapping("/simplemailsend")
 	public String simpleMailSend(HttpServletRequest request) {
 
-		Member m = (Member)request.getSession().getAttribute("login");
+		Member m = (Member) request.getSession().getAttribute("login");
 		System.out.println(m);
 		String email = m.getId();
-		String authCode = m.getAuthCode() + "";
-		mailService.mailSend(email, authCode);
+		String authKey = m.getAuthKey() + "";
+		mailService.mailSend(email, authKey);
 
 		return "mail/sendmailOK";
 	}
-
-
 
 }
